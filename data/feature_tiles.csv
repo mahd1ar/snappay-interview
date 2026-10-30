@@ -1,0 +1,4 @@
+﻿id,title,title_status,image,merchant_ids,order,active
+car-tile-01,لوازم و تیونینگ,PLACEHOLDER_CONFIRM,./assets/images/feature-tiles/car-tile-01.webp,car-merchant-07;car-merchant-01,1,1
+car-tile-02,نگهداری و سرویس,PLACEHOLDER_CONFIRM,./assets/images/feature-tiles/car-tile-02.webp,car-merchant-04;car-merchant-02,2,1
+car-tile-03,لاستیک و رینگ,PLACEHOLDER_CONFIRM,./assets/images/feature-tiles/car-tile-03.webp,car-merchant-03;car-merchant-09,3,1

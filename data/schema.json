@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "status": "sample",
+  "currency": "IRR_TOMAN",
+  "common": {
+    "id": "stable string",
+    "order": "integer ascending",
+    "active": "0 or 1",
+    "image/logo": "project-relative asset path",
+    "merchant_id": "FK -> merchants.csv id",
+    "category_ids/merchant_ids": "semicolon separated foreign keys",
+    "url/link/website_url": "HTTPS; sample example.com with outbound UTM",
+    "channel": "online | offline | both",
+    "price_toman": "integer Toman",
+    "discount_type": "percent | fixed_toman"
+  },
+  "validation": [
+    "all asset paths must exist",
+    "all foreign keys should resolve",
+    "do not use merchant URL for offline merchant",
+    "offline/both merchants need branches",
+    "no duplicate IDs per table",
+    "coupons need logo and code",
+    "non-empty image alt labels from title"
+  ],
+  "replace_instruction": "Keep IDs and column names stable; replace values and image paths. Update local CSV and keep landing.config.json references unchanged."
+}

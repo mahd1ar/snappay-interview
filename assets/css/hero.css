@@ -1,0 +1,64 @@
+.sp-hero { text-align: center; }
+/* The hero art is a transparent circular badge (cashback-landing style): show it whole, no frame. */
+.sp-hero-scene { position: relative; width: 100%; aspect-ratio: 1; isolation: isolate; }
+.sp-hero-scene > .sp-hero__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.sp-hero-labels { position: absolute; inset: 0; z-index: 1; }
+
+.sp-hero-label { position: absolute; display: inline-flex; align-items: center; gap: 6px; max-width: 49%; min-height: 48px;
+  padding: 5px 5px 5px 12px; border: 1px solid #ffffffd9; border-radius: 999px; background: #ffffffd6;
+  -webkit-backdrop-filter: blur(10px) saturate(1.4); backdrop-filter: blur(10px) saturate(1.4);
+  color: var(--sp-ink); box-shadow: 0 6px 18px #2024371f, inset 0 1px 0 #fff; text-align: start; overflow: hidden;
+  --enter-x: 0px; --enter-y: 10px; }
+.sp-hero-label__icon { flex: 0 0 38px; width: 38px; height: 38px; border-radius: 50%; overflow: hidden; background: #f1f4f9; }
+/* Transparent cut-outs (same files as the categories section), shown whole on the category tint. */
+.sp-hero-label__icon img { width: 100%; height: 100%; padding: 5px; object-fit: contain; }
+.sp-hero-label__text { min-width: 0; font-size: .75rem; font-weight: 700; line-height: 1.55; }
+.sp-hero-label::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0;
+  background: linear-gradient(110deg, transparent 36%, #ffffff10 43%, #ffffffb0 50%, #ffffff10 57%, transparent 64%);
+  background-size: 260% 100%; background-position: 150% 0; }
+.sp-hero-label:active { transform: scale(.97); }
+.sp-hero-label:focus-visible { outline-offset: 3px; }
+
+/* Layout: five slots on the rim of the badge, mirrored like the cashback hero. */
+.sp-hero-label[data-slot="1"] { right: 0; top: 13%; --entry-delay: 140ms; --wiggle-delay: 2.1s; --enter-x: 8px; }
+.sp-hero-label[data-slot="2"] { left: 0; top: 13%; --entry-delay: 260ms; --wiggle-delay: 2.8s; --enter-x: -8px; }
+.sp-hero-label[data-slot="3"] { right: 0; top: 66%; --entry-delay: 380ms; --wiggle-delay: 3.5s; --enter-x: 8px; }
+.sp-hero-label[data-slot="4"] { left: 0; top: 66%; --entry-delay: 500ms; --wiggle-delay: 4.2s; --enter-x: -8px; }
+.sp-hero-label[data-slot="5"] { left: 50%; top: 86%; translate: -50% 0; --entry-delay: 620ms; --wiggle-delay: 4.9s; --enter-y: 12px; }
+
+.sp-hero-copy { margin-top: 10px; }
+.sp-hero-title { margin: 0; color: var(--sp-brand); font-size: 1.75rem; font-weight: 800; line-height: 1.65; }
+.sp-hero-description { max-width: 340px; margin: 2px auto 0; color: var(--sp-muted); font-size: .875rem; line-height: 1.9; }
+
+@keyframes sp-label-enter {
+  0% { opacity: 0; transform: translate3d(var(--enter-x), var(--enter-y), 0) scale(.95); filter: blur(3px); }
+  75% { opacity: 1; transform: translate3d(0, -1px, 0) scale(1.015); filter: blur(0); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes sp-label-sheen { 0% { opacity: 0; background-position: 150% 0; } 20%, 80% { opacity: .8; } 100% { opacity: 0; background-position: -50% 0; } }
+@keyframes sp-label-wiggle {
+  0%, 12%, 100% { transform: none; }
+  2.5% { transform: translateY(-1px) rotate(-1.5deg); }
+  5% { transform: translateY(-1.5px) rotate(1.2deg); }
+  7.5% { transform: translateY(-.5px) rotate(-.6deg); }
+}
+@keyframes sp-hero-zoom { from { transform: scale(1.06); opacity: 0; } to { transform: none; opacity: 1; } }
+@media (prefers-reduced-motion: no-preference) {
+  .sp-hero__image { animation: sp-hero-zoom 900ms var(--sp-ease-out) both; }
+  .sp-hero:not(.is-ready) .sp-hero-label { opacity: 0; }
+  .sp-hero.is-ready .sp-hero-label { animation: sp-label-enter 680ms var(--entry-delay) var(--sp-ease-out) both; transition: transform 160ms ease; }
+  .sp-hero.is-ready .sp-hero-label__icon img { animation: sp-label-wiggle 8s var(--wiggle-delay) ease-in-out infinite; }
+  .sp-hero.is-ready .sp-hero-label::before { animation: sp-label-sheen 1000ms calc(var(--entry-delay) + 650ms) both; }
+  .sp-hero.is-paused .sp-hero-label__icon img { animation-play-state: paused; }
+  .sp-hero-copy { animation: sp-reveal 650ms 200ms var(--sp-ease-out) both; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .sp-hero-label:hover { box-shadow: 0 10px 24px #20243729, inset 0 1px 0 #fff; }
+}
+@media (max-width: 359px) {
+  .sp-hero-label { min-height: 44px; gap: 4px; padding-inline-end: 9px; }
+  .sp-hero-label__icon { flex-basis: 32px; width: 32px; height: 32px; }
+  .sp-hero-label__text { font-size: .6875rem; }
+  .sp-hero-title { font-size: 1.5rem; }
+  .sp-hero-description { font-size: .8125rem; }
+}

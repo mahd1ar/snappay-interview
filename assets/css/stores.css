@@ -1,0 +1,19 @@
+/* Stores: ec-service store card, laid out as a two-row horizontal grid so the closing section shows more at once. */
+.sp-stores-rail { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, auto); grid-auto-columns: min(78%, 248px); gap: 10px; }
+.sp-store-card { display: flex; align-items: center; gap: 10px; width: 100%; min-width: 0; height: 90px; margin: 0; padding: 8px;
+  border: 1px solid #e7ebf2; border-radius: 18px; background: #fff; color: var(--sp-ink); text-decoration: none; text-align: start;
+  box-shadow: 0 2px 5px #172b4d05; }
+.sp-store-cover { flex: 0 0 72px; width: 72px; height: 72px; overflow: hidden; border-radius: 12px; background: #edf5fb; }
+.sp-store-cover img { width: 100%; height: 100%; object-fit: cover; }
+.sp-store-content { display: flex; flex: 1; flex-direction: column; justify-content: center; gap: 7px; min-width: 0; }
+.sp-store-identity { display: flex; align-items: center; gap: 6px; min-width: 0; min-height: 24px; }
+.sp-store-logo { flex: 0 0 24px; width: 24px; height: 24px; object-fit: contain; border-radius: 6px; }
+.sp-store-name { min-width: 0; font-size: .75rem; font-weight: 700; line-height: 1.7; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.sp-store-meta { display: flex; align-items: center; justify-content: space-between; gap: 4px; }
+.sp-store-arrow { width: 14px; height: 14px; flex-shrink: 0; color: #7b899c; }
+.sp-store-card:active { opacity: .82; }
+@media (hover: hover) and (pointer: fine) { .sp-store-card:hover { border-color: #b9d9f3; } }
+.sp-stores-grid { display: grid; gap: 10px; }
+.sp-stores-skeleton { display: grid; grid-auto-flow: column; grid-template-rows: repeat(2, 90px); grid-auto-columns: 78%; gap: 10px; overflow: hidden; }
+.sp-stores-skeleton span { border-radius: 18px; }
+@media (max-width: 359px) { .sp-store-name { font-size: .6875rem; } }

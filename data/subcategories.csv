@@ -1,0 +1,21 @@
+﻿id,title,parent_category_id,image,carousel_row,order_in_row,active
+sub-01,دورفرمان اسپرت,cat-tuning,./assets/images/categories/category-01.webp,1,1,1
+sub-02,روکش صندلی,cat-tuning,./assets/images/categories/category-01.webp,2,1,1
+sub-03,کف‌پوش سه‌بعدی,cat-tuning,./assets/images/categories/category-01.webp,1,2,1
+sub-04,خوشبوکننده خودرو,cat-tuning,./assets/images/categories/category-01.webp,2,2,1
+sub-05,اسپری شیشه‌شوی,cat-care,./assets/images/categories/category-02.webp,1,3,1
+sub-06,پولیش بدنه,cat-care,./assets/images/categories/category-02.webp,2,3,1
+sub-07,دستمال مایکروفایبر,cat-care,./assets/images/categories/category-02.webp,1,4,1
+sub-08,جارو فندکی,cat-care,./assets/images/categories/category-02.webp,2,4,1
+sub-09,روغن موتور,cat-parts,./assets/images/categories/category-03.webp,1,5,1
+sub-10,فیلتر هوا خودرو,cat-parts,./assets/images/categories/category-03.webp,2,5,1
+sub-11,لنت ترمز,cat-parts,./assets/images/categories/category-03.webp,1,6,1
+sub-12,باتری خودرو,cat-parts,./assets/images/categories/category-03.webp,2,6,1
+sub-13,آچار بکس,cat-tools,./assets/images/categories/category-04.webp,1,7,1
+sub-14,جک هیدرولیک,cat-tools,./assets/images/categories/category-04.webp,2,7,1
+sub-15,کمپرسور باد,cat-tools,./assets/images/categories/category-04.webp,1,8,1
+sub-16,کیت پنچرگیری,cat-tools,./assets/images/categories/category-04.webp,2,8,1
+sub-17,لاستیک سواری,cat-tires,./assets/images/categories/category-05.webp,1,9,1
+sub-18,لاستیک SUV,cat-tires,./assets/images/categories/category-05.webp,2,9,1
+sub-19,لاستیک چهارفصل,cat-tires,./assets/images/categories/category-05.webp,1,10,1
+sub-20,رینگ اسپرت,cat-tires,./assets/images/categories/category-05.webp,2,10,1

@@ -1,0 +1,67 @@
+/* Coupon card, matched to the Snapp Club voucher card (myclub.snapp.ir/vendors/cab):
+   title → outlined pill → status badges → code bar with copy. Kept as a swipeable carousel. */
+/* Layout follows Snapp Club; colours come from the landing's own sp-* tokens (base.css). */
+.sp-coupons, .sp-panel {
+  --cp-ink: var(--sp-ink);
+  --cp-muted: var(--sp-muted);
+  --cp-border: var(--sp-card-border);
+  --cp-pill-border: var(--sp-border);
+  --cp-accent: var(--sp-brand-strong);  /* #006bbe: readable 13px text on the light-blue bar */
+  --cp-bar: var(--sp-brand-soft);
+  --cp-badge: var(--sp-brand-link);     /* #0078d6: white 12px text stays legible */
+  --cp-soft: var(--sp-surface);
+  --cp-hover: #dcefff;
+  --cp-press: #cfe8fd;
+  --cp-shadow: 0 12px 17px #172b4d0d, 0 5px 22px #172b4d0a, 0 7px 8px #172b4d14;
+}
+
+/* Room above/below so the card shadow is not clipped by the scroller. */
+.sp-coupon-rail { gap: 12px; scroll-snap-type: x mandatory; padding-top: 6px; padding-bottom: 30px; margin-bottom: -18px; }
+.sp-coupon-slide { width: min(88%, 358px); scroll-snap-align: center; }
+.sp-coupon-rail > .sp-coupon-slide:only-child { width: 100%; }
+.sp-coupon-rail > .sp-coupon-slide:first-child { scroll-snap-align: start; }
+.sp-coupon-rail > .sp-coupon-slide:last-child { scroll-snap-align: end; }
+
+.sp-coupon { display: flex; flex-direction: column; gap: 12px; height: 100%; padding: 16px;
+  border: 1px solid var(--cp-border); border-radius: 16px; background: #fff; box-shadow: var(--cp-shadow); color: var(--cp-ink); }
+.sp-coupon__title { margin: 0; color: var(--cp-ink); font-size: .875rem; font-weight: 500; line-height: 24px; }
+
+.sp-coupon__pill { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; max-width: 100%; min-height: 34px;
+  padding: 2px 12px; border: 1px solid var(--cp-pill-border); border-radius: 24px; background: #fff; color: var(--cp-ink); text-align: start; }
+.sp-coupon__pill img { flex: 0 0 24px; width: 24px; height: 24px; border-radius: 6px; object-fit: contain; }
+.sp-coupon__pill span { min-width: 0; font-size: 1rem; font-weight: 500; line-height: 1.7; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+button.sp-coupon__pill:active { background: var(--cp-soft); }
+
+.sp-coupon__badges { display: flex; flex-wrap: wrap; gap: 4px; }
+.sp-coupon__badge { display: inline-flex; align-items: center; min-height: 24px; padding: 4px 8px; border-radius: 24px;
+  background: var(--cp-badge); color: #fff; font-size: .75rem; line-height: 16px; white-space: nowrap; }
+.sp-coupon__badge--soft { background: var(--cp-soft); color: var(--cp-muted); }
+.sp-coupon__badge--urgent { background: var(--sp-sale); }
+
+.sp-coupon__bar { display: flex; align-items: center; justify-content: space-between; gap: 4px; padding: 4px; border-radius: 8px; background: var(--cp-bar); }
+.sp-coupon__code { flex: 1 1 auto; display: flex; align-items: center; justify-content: center; min-width: 0; min-height: 38px; padding: 8px 6px;
+  border-radius: 4px; background: #fff; color: var(--cp-muted); font-size: .8125rem; line-height: 22px; letter-spacing: .3px;
+  direction: ltr; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; user-select: all; }
+.sp-coupon__copy { flex: 0 0 120px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 36px;
+  padding: 0 8px; border: 0; border-radius: 8px; background: transparent; color: var(--cp-accent); font-size: .8125rem; font-weight: 500; line-height: 24px; }
+.sp-coupon__copy svg { flex: 0 0 24px; width: 24px; height: 24px; }
+.sp-coupon__copy:active { background: var(--cp-press); }
+.sp-coupon__copy.is-copied { color: var(--sp-success); }
+@media (hover: hover) and (pointer: fine) { .sp-coupon__copy:hover { background: var(--cp-hover); } }
+
+.sp-dots { display: flex; justify-content: center; gap: 2px; margin-top: 6px; }
+.sp-dots button { display: grid; place-items: center; width: 22px; height: 24px; padding: 0; border: 0; background: none; }
+.sp-dots button::after { content: ''; width: 6px; height: 6px; border-radius: 6px; background: #d3d9e4; transition: width 220ms ease, background-color 220ms ease; }
+.sp-dots button[aria-current="true"]::after { width: 16px; background: var(--sp-brand); }
+.sp-coupons-skeleton { display: flex; gap: 12px; overflow: hidden; padding-top: 6px; }
+.sp-coupons-skeleton span { flex: 0 0 88%; height: 198px; border-radius: 16px; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .sp-coupon__copy { transition: background-color 160ms ease, color 160ms ease, transform 120ms ease; }
+  .sp-coupon__copy:active { transform: scale(.97); }
+}
+@media (max-width: 359px) {
+  .sp-coupon { padding: 14px; }
+  .sp-coupon__pill span { font-size: .875rem; }
+  .sp-coupon__copy { flex-basis: 104px; gap: 4px; }
+}

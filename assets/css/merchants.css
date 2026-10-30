@@ -1,0 +1,37 @@
+/* Merchant carousel: tall "storefront" cards using the 390×640 merchant photos. */
+.sp-merchant-rail .sp-rail { gap: 10px; }
+.sp-merchant-slide { width: clamp(128px, calc((100vw - 52px) / 2.6), 150px); }
+.sp-merchant-story { position: relative; display: block; width: 100%; aspect-ratio: 390 / 640; padding: 0; border: 0; border-radius: 20px;
+  overflow: hidden; background: linear-gradient(145deg, #749bb3, #314252); color: #fff; text-align: start; isolation: isolate; }
+.sp-merchant-story__photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+.sp-merchant-story::after { content: ''; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(180deg, #00000000 35%, #0000001a 52%, #000000c2 100%); }
+.sp-merchant-story__logo { position: absolute; top: 10px; right: 10px; width: 40px; height: 40px; padding: 3px; border-radius: 12px;
+  background: #fff; object-fit: contain; box-shadow: 0 4px 10px #0000002e; }
+.sp-merchant-story__content { position: absolute; inset-inline: 10px; bottom: 10px; display: grid; gap: 4px; justify-items: start; }
+.sp-merchant-story__name { font-size: .875rem; font-weight: 700; line-height: 1.6; text-shadow: 0 1px 4px #0006; overflow-wrap: anywhere; }
+.sp-merchant-story__tags { font-size: .625rem; line-height: 1.6; opacity: .88; }
+.sp-merchant-story .sp-channel { background: #ffffffe6; }
+.sp-merchant-story:active { transform: scale(.98); }
+.sp-merchant-story.has-no-image .sp-img-fallback { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .sp-merchant-story { transition: transform 140ms ease; }
+  @media (hover: hover) and (pointer: fine) {
+    .sp-merchant-story__photo { transition: transform 400ms ease; }
+    .sp-merchant-story:hover .sp-merchant-story__photo { transform: scale(1.05); }
+  }
+}
+.sp-merchants-skeleton { display: flex; gap: 10px; overflow: hidden; }
+.sp-merchants-skeleton span { flex: 0 0 140px; aspect-ratio: 390 / 640; border-radius: 20px; }
+
+/* Merchant grid inside the panel (ec-service panel card). */
+.sp-merchant-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.sp-merchant-card { position: relative; display: block; width: 100%; min-width: 0; aspect-ratio: 1; overflow: hidden; border: 0;
+  border-radius: 18px; padding: 0; text-align: right; text-decoration: none; background: linear-gradient(145deg, #749bb3, #314252); color: #fff; isolation: isolate; }
+.sp-merchant-card::after { content: ''; position: absolute; z-index: 0; inset: 0; background: linear-gradient(180deg, transparent 18%, #0000000a 38%, #000000b0 100%); }
+.sp-merchant-card > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.sp-merchant-card__content { position: absolute; z-index: 1; inset-inline: 12px; bottom: 12px; display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
+.sp-merchant-card__logo { width: 32px; height: 32px; padding: 3px; margin-bottom: 3px; border-radius: 10px; object-fit: contain; background: #fff; }
+.sp-merchant-card__name { max-width: 100%; font-size: .875rem; font-weight: 700; line-height: 1.6; overflow-wrap: anywhere; }
+.sp-merchant-card .sp-channel { background: #ffffffe6; }
+.sp-merchant-card:active { transform: scale(.985); }

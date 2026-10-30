@@ -1,0 +1,11 @@
+﻿id,merchant_id,name,channel,image,logo,order,active
+car-store-01,car-merchant-01,آوتوپلاس,online,./assets/images/stores/car-store-01.webp,./assets/images/logos/car-merchant-01.svg,1,1
+car-store-02,car-merchant-02,گاراژنو,offline,./assets/images/stores/car-store-02.webp,./assets/images/logos/car-merchant-02.svg,2,1
+car-store-03,car-merchant-03,تایرستان,online,./assets/images/stores/car-store-03.webp,./assets/images/logos/car-merchant-03.svg,3,1
+car-store-04,car-merchant-04,اویل‌سنتر,both,./assets/images/stores/car-store-04.webp,./assets/images/logos/car-merchant-04.svg,4,1
+car-store-05,car-merchant-05,ابزارماشین,online,./assets/images/stores/car-store-05.webp,./assets/images/logos/car-merchant-05.svg,5,1
+car-store-06,car-merchant-06,تمیزکار,offline,./assets/images/stores/car-store-06.webp,./assets/images/logos/car-merchant-06.svg,6,1
+car-store-07,car-merchant-07,تیونینگ‌لند,online,./assets/images/stores/car-store-07.webp,./assets/images/logos/car-merchant-07.svg,7,1
+car-store-08,car-merchant-08,یدک‌یار,both,./assets/images/stores/car-store-08.webp,./assets/images/logos/car-merchant-08.svg,8,1
+car-store-09,car-merchant-09,لاستیک‌پلاس,offline,./assets/images/stores/car-store-09.webp,./assets/images/logos/car-merchant-09.svg,9,1
+car-store-10,car-merchant-10,کارزون,online,./assets/images/stores/car-store-10.webp,./assets/images/logos/car-merchant-10.svg,10,1

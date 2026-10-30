@@ -1,0 +1,62 @@
+/* In-page panel (SPA view stack inside one <dialog>), same shape as the ec-service merchant panel. */
+.sp-panel { position: fixed; z-index: 1000; inset: 0; width: 100%; max-width: var(--sp-page-width); height: 100vh; height: 100dvh;
+  max-height: none; margin: 0 auto; border: 0; padding: var(--sp-safe-top) 0 0; overflow: hidden; background: #fff; color: var(--sp-ink);
+  box-shadow: 0 0 36px #20243712; }
+.sp-panel[open] { display: flex; flex-direction: column; }
+.sp-panel::backdrop { background: #20243759; }
+.sp-panel-header { display: flex; align-items: center; flex-shrink: 0; gap: 8px; min-height: 60px; padding: 6px 10px; border-bottom: 1px solid transparent;
+  transition: border-color 160ms ease; }
+.sp-panel.is-scrolled .sp-panel-header { border-bottom-color: var(--sp-border); }
+.sp-panel-header h2 { min-width: 0; margin: 0; overflow: hidden; font-size: 1rem; font-weight: 700; white-space: nowrap; text-overflow: ellipsis; }
+.sp-panel-back { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; }
+.sp-panel-back:active { background: var(--sp-surface); }
+.sp-panel-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch;
+  padding: 4px var(--sp-gutter) calc(28px + var(--sp-safe-bottom)); }
+.sp-view { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; align-content: start; }
+/* Nested horizontal rails must not widen the column. */
+.sp-view > *, .sp-view-section { min-width: 0; }
+.sp-view-intro { margin: 0; color: var(--sp-muted); font-size: .75rem; }
+.sp-view-section h3 { margin: 6px 0 10px; font-size: .875rem; }
+.sp-view .sp-rail { padding-bottom: 6px; }
+.sp-panel-tools { position: sticky; top: -4px; z-index: 2; display: grid; gap: 10px; margin: 0 calc(var(--sp-gutter) * -1); padding: 4px var(--sp-gutter) 8px; background: #fff; }
+.sp-panel-tools .sp-chips { margin-bottom: 0; }
+.sp-search-field { position: relative; display: block; }
+.sp-search-field input { width: 100%; height: 48px; padding: 10px 14px 10px 46px; border: 1px solid #ced2df; border-radius: 12px;
+  background: var(--sp-field); font-size: 16px; line-height: 1.5; }
+.sp-search-field input::placeholder { color: #77839b; font-size: .8125rem; }
+.sp-search-field input::-webkit-search-cancel-button { -webkit-appearance: none; }
+.sp-search-field svg { position: absolute; left: 14px; top: 13px; color: #687182; pointer-events: none; }
+.sp-result-count { margin: 0 2px; color: var(--sp-muted); font-size: .6875rem; }
+.sp-empty { margin: 36px 10px 20px; text-align: center; color: var(--sp-muted); font-size: .875rem; line-height: 2; }
+
+/* Merchant detail */
+.sp-detail-hero { height: 220px; margin: -4px calc(var(--sp-gutter) * -1) 0; background: linear-gradient(140deg, #dfe7ed, #abc0d0); overflow: hidden; }
+.sp-detail-hero > img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.sp-detail-summary { position: relative; display: grid; gap: 14px; margin: -58px 2px 0; padding: 16px; border: 1px solid #ffffffc9;
+  border-radius: 24px; background: #f5f5f8f2; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 8px 28px #20243710; }
+.sp-detail-heading { display: flex; align-items: center; gap: 12px; }
+.sp-detail-logo { width: 56px; height: 56px; padding: 5px; border: 1px solid var(--sp-border); border-radius: 18px; background: #fff; object-fit: contain; }
+.sp-detail-heading h3 { margin: 0 0 4px; font-size: 1rem; }
+.sp-detail-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.sp-detail-tag { padding: 1px 9px; border-radius: 20px; background: #e7e8ed; font-size: .625rem; line-height: 1.9; }
+.sp-detail-desc { margin: 0; color: var(--sp-muted); font-size: .75rem; }
+.sp-detail-summary .sp-button { width: 100%; }
+.sp-branch { border: 1px solid var(--sp-border); border-radius: 18px; padding: 14px; }
+.sp-branch + .sp-branch { margin-top: 10px; }
+.sp-branch-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+.sp-branch h4 { flex: 1 1 120px; margin: 8px 0 0; font-size: .875rem; }
+.sp-branch p { margin: 8px 0 0; color: var(--sp-muted); font-size: .75rem; line-height: 2; }
+.sp-branch-actions { display: flex; gap: 8px; }
+.sp-branch-action { display: inline-flex; align-items: center; justify-content: center; gap: 5px; min-width: 44px; min-height: 44px; padding: 7px 12px;
+  border-radius: 22px; background: #f5f4fc; text-decoration: none; font-size: .6875rem; }
+.sp-branch-action--map { color: var(--sp-brand-strong); background: var(--sp-brand-soft); }
+
+@keyframes sp-panel-enter { from { opacity: 0; transform: translateX(-8%); } to { opacity: 1; transform: none; } }
+@keyframes sp-view-enter { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: none; } }
+@keyframes sp-view-back { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .sp-panel[open] { animation: sp-panel-enter 320ms var(--sp-ease-out) both; }
+  .sp-panel.is-closing { animation: sp-panel-enter 200ms ease reverse both; }
+  .sp-view[data-enter="forward"] { animation: sp-view-enter 280ms var(--sp-ease-out) both; }
+  .sp-view[data-enter="back"] { animation: sp-view-back 280ms var(--sp-ease-out) both; }
+}

@@ -1,0 +1,6 @@
+﻿id,title,image,order,active
+cat-tuning,لوازم تزئینی و تیونینگ,./assets/images/categories/category-01.webp,1,1
+cat-care,لوازم نظافت و نگه‌داری,./assets/images/categories/category-02.webp,2,1
+cat-parts,قطعات و لوازم مصرفی,./assets/images/categories/category-03.webp,3,1
+cat-tools,انواع ابزارالات,./assets/images/categories/category-04.webp,4,1
+cat-tires,انواع لاستیک,./assets/images/categories/category-05.webp,5,1

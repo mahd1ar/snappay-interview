@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="آوتوپلاس">
+<title>آوتوپلاس</title>
+<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF2E63"/><stop offset="1" stop-color="#FF8A5B"/></linearGradient></defs>
+<rect width="128" height="128" rx="30" fill="url(#bg)"/>
+<path d="M0 30A30 30 0 0 1 30 0h68a30 30 0 0 1 30 30v14C92 30 40 26 0 52z" fill="#fff" opacity=".12"/>
+
+<path d="M18 86v-9c0-4 3-7 7-8l9-2 11-13c3-4 8-6 13-6h22c5 0 10 2 13 6l9 12 7 2c4 1 7 4 7 8v10c0 2-2 4-4 4H22c-2 0-4-2-4-4z" fill="#fff"/>
+<path d="M49 66l7-9c2-2 4-3 7-3h8v12zM78 54h6c2 0 4 1 5 3l6 9H78z" fill="#FF5A7A"/>
+<circle cx="40" cy="90" r="11" fill="#3A1030" stroke="#fff" stroke-width="4"/>
+<circle cx="88" cy="90" r="11" fill="#3A1030" stroke="#fff" stroke-width="4"/>
+<circle cx="98" cy="30" r="15" fill="#FFE66D"/>
+<path d="M98 22v16M90 30h16" stroke="#FF2E63" stroke-width="5" stroke-linecap="round"/>
+</svg>

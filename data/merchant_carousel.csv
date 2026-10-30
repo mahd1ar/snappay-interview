@@ -1,0 +1,9 @@
+﻿id,merchant_id,title,image,logo,order,active
+car-featured-01,car-merchant-01,آوتوپلاس,./assets/images/merchants/car-merchant-01.webp,./assets/images/logos/car-merchant-01.svg,1,1
+car-featured-02,car-merchant-02,گاراژنو,./assets/images/merchants/car-merchant-02.webp,./assets/images/logos/car-merchant-02.svg,2,1
+car-featured-03,car-merchant-03,تایرستان,./assets/images/merchants/car-merchant-03.webp,./assets/images/logos/car-merchant-03.svg,3,1
+car-featured-04,car-merchant-04,اویل‌سنتر,./assets/images/merchants/car-merchant-04.webp,./assets/images/logos/car-merchant-04.svg,4,1
+car-featured-05,car-merchant-05,ابزارماشین,./assets/images/merchants/car-merchant-05.webp,./assets/images/logos/car-merchant-05.svg,5,1
+car-featured-06,car-merchant-06,تمیزکار,./assets/images/merchants/car-merchant-06.webp,./assets/images/logos/car-merchant-06.svg,6,1
+car-featured-07,car-merchant-07,تیونینگ‌لند,./assets/images/merchants/car-merchant-07.webp,./assets/images/logos/car-merchant-07.svg,7,1
+car-featured-08,car-merchant-08,یدک‌یار,./assets/images/merchants/car-merchant-08.webp,./assets/images/logos/car-merchant-08.svg,8,1

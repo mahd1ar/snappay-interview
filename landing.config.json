@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0.0",
+  "landing_id": "automotive",
+  "title": "لوازم خودرو",
+  "locale": "fa-IR",
+  "direction": "rtl",
+  "frontend_only": true,
+  "mobile_first": true,
+  "spa_in_page_panels": true,
+  "sample_content": true,
+  "hero_background": "./assets/images/hero/automotive-hero.webp",
+  "sections": [
+    {
+      "id": "hero",
+      "title": "هیرو با پنج دسته اصلی",
+      "data_source": "./data/hero_categories.csv",
+      "order": 1,
+      "required": true
+    },
+    {
+      "id": "subcategories",
+      "title": "زیردسته‌ها در دو ردیف با حرکت مخالف",
+      "data_source": "./data/subcategories.csv",
+      "order": 2,
+      "required": true
+    },
+    {
+      "id": "products",
+      "title": "کروسل محصول",
+      "data_source": "./data/products.csv",
+      "order": 3,
+      "required": true
+    },
+    {
+      "id": "merchants",
+      "title": "کروسل مرچنت",
+      "data_source": "./data/merchant_carousel.csv",
+      "order": 4,
+      "required": true
+    },
+    {
+      "id": "coupons",
+      "title": "کروسل کد تخفیف",
+      "data_source": "./data/coupons.csv",
+      "order": 5,
+      "required": true
+    },
+    {
+      "id": "feature_tiles",
+      "title": "سه تایل متصل به مرچنت",
+      "data_source": "./data/feature_tiles.csv",
+      "order": 6,
+      "required": true
+    },
+    {
+      "id": "stores",
+      "title": "استور سکشن پایانی",
+      "data_source": "./data/stores.csv",
+      "order": 7,
+      "required": true
+    }
+  ],
+  "merchants_source": "./data/merchants.csv",
+  "branches_source": "./data/branches.csv",
+  "utm_defaults": {
+    "utm_source": "snapppay",
+    "utm_medium": "ec_landing",
+    "utm_campaign": "automotive_test"
+  },
+  "sample_link_warning": "All external URLs point to example.com and MUST be replaced before publication.",
+  "unsupported_if_missing": "render a safe empty/error state; do not invent content."
+}
