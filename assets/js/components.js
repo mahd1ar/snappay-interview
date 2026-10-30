@@ -1,13 +1,12 @@
 // Card components. Each returns a DOM node; navigation goes through ctx.openMerchant / outbound links.
 import {
   h, img, icon, channelBadge, channelLabel, formatToman, formatTomanShort, formatNumber, discountPercent,
-  copyText, toast, outboundURL,
+  copyText, toast,
 } from './ui.js';
 
-export function productCard(product) {
+export function productCard(product, ctx) {
   const percent = discountPercent(product.price, product.original);
-  const tag = product.url ? 'a' : 'div';
-  return h(`${tag}.sp-offer-card`, { href: product.url ? outboundURL(product.url) : undefined, rel: product.url ? 'noopener' : undefined,
+  return h('button.sp-offer-card', { type: 'button', 'aria-haspopup': 'dialog', onclick: () => ctx.openProduct(product),
     'aria-label': `${product.title}، ${formatToman(product.price)} تومان${product.merchant ? `، ${product.merchant.name}` : ''}` },
     h('div.sp-offer-surface', {},
       h('div.sp-offer-media', {},

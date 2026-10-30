@@ -90,7 +90,7 @@ export function renderProducts(region, ctx) {
         update(); rail.scrollTo({ left: 0, behavior: 'instant' });
       } }, label));
     const update = () => rail.replaceChildren(...products.filter(p => active === 'all' || p.categoryId === active)
-      .map(p => h('div.sp-offer-slide', { role: 'listitem' }, productCard(p))));
+      .map(p => h('div.sp-offer-slide', { role: 'listitem' }, productCard(p, ctx))));
     update();
     return h('div', {}, used.length > 1 && enableDragScroll(h('div.sp-chips', { role: 'group', 'aria-label': 'فیلتر دسته' }, chips), { snap: false }), rail);
   } });

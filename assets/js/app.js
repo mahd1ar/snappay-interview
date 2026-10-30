@@ -1,7 +1,7 @@
 import { loadLanding } from './data.js';
 import { createPanel } from './panel.js';
 import { stateMessage } from './ui.js';
-import { categoryView, merchantDetailView, merchantListView, productsView } from './views.js';
+import { categoryView, merchantDetailView, merchantListView, productDetailView, productsView } from './views.js';
 import {
   skeletons, renderHero, renderSubcategories, renderProducts, renderMerchants, renderCoupons, renderTiles, renderStores, renderFooter,
 } from './sections.js';
@@ -14,6 +14,7 @@ const ctx = { panel, marquees: [], data: null };
 panel.onToggle(() => ctx.marquees.forEach(marquee => marquee.sync()));
 
 ctx.openMerchant = merchant => panel.open(merchantDetailView(ctx, merchant));
+ctx.openProduct = product => panel.open(productDetailView(ctx, product));
 ctx.openCategory = (categoryId, options) => panel.open(categoryView(ctx, categoryId, options));
 ctx.openTile = tile => panel.open(tile.merchants.length === 1
   ? merchantDetailView(ctx, tile.merchants[0])

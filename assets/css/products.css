@@ -30,3 +30,18 @@
   }
 }
 @media (max-width: 359px) { .sp-offer-final { font-size: .8125rem; } }
+/* Card is a button now (opens the in-page product view). */
+button.sp-offer-card { padding: 0; border: 0; background: none; font: inherit; text-align: start; }
+
+/* Product view inside the panel */
+.sp-product-media { position: relative; aspect-ratio: 1; margin-top: 4px; border-radius: 24px; overflow: hidden; background: #f5f7fa; }
+.sp-product-media > img { width: 100%; height: 100%; padding: 8%; object-fit: contain; }
+.sp-product-media .sp-offer-badge { top: 14px; right: 14px; font-size: .8125rem; }
+.sp-product-summary { margin-top: -36px; }
+.sp-product-merchant { display: inline-flex; align-items: center; gap: 8px; justify-self: start; min-height: 44px; padding: 4px 6px 4px 12px;
+  border: 1px solid var(--sp-border); border-radius: 999px; background: #fff; color: var(--sp-ink); font-size: .8125rem; font-weight: 700; }
+.sp-product-merchant img { width: 32px; height: 32px; border-radius: 9px; object-fit: contain; }
+.sp-product-merchant .sp-store-arrow { display: inline-flex; width: 14px; height: 14px; }
+.sp-product-title { margin: 0; font-size: 1rem; line-height: 1.8; }
+.sp-product-prices { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+.sp-product-prices .sp-offer-final { font-size: 1.25rem; }

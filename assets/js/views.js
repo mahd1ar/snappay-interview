@@ -1,5 +1,5 @@
 // Panel views. Each returns { title, render } for panel.open().
-import { h, img, icon, channelBadge, formatNumber, outboundURL } from './ui.js';
+import { h, img, icon, channelBadge, formatNumber, formatToman, discountPercent, outboundURL } from './ui.js';
 import { productCard, merchantCard, storeCard, couponCard } from './components.js';
 import { enableDragScroll } from './drag-scroll.js';
 
@@ -59,7 +59,7 @@ export function categoryView(ctx, categoryId, { subcategory } = {}) {
     intro: subcategory ? `«${subcategory.title}» را در فروشگاه‌های دسته‌ی ${category.title} پیدا کنید.` : undefined,
     extra: () => h('div', {},
       categoryProducts.length > 0 && h('section.sp-view-section', {}, h('h3', {}, 'محصولات این دسته'),
-        enableDragScroll(h('div.sp-rail', {}, categoryProducts.map(p => h('div.sp-offer-slide', {}, productCard(p)))))),
+        enableDragScroll(h('div.sp-rail', {}, categoryProducts.map(p => h('div.sp-offer-slide', {}, productCard(p, ctx)))))),
       categoryCoupons.length > 0 && h('section.sp-view-section', {}, h('h3', {}, 'کدهای تخفیف این دسته'),
         enableDragScroll(h('div.sp-rail.sp-coupon-rail', {}, categoryCoupons.map(c => h('div.sp-coupon-slide', {}, couponCard(c, ctx))))))),
   });
@@ -76,7 +76,7 @@ export function productsView(ctx) {
       const options = [['all', 'همه'], ...used.map(c => [c.id, c.title])];
       const chips = options.map(([id, label]) => h('button.sp-chip', { type: 'button', 'aria-pressed': String(id === active),
         onclick: event => { active = id; chips.forEach(chip => chip.setAttribute('aria-pressed', String(chip === event.currentTarget))); update(); } }, label));
-      const update = () => grid.replaceChildren(...products.filter(p => active === 'all' || p.categoryId === active).map(productCard));
+      const update = () => grid.replaceChildren(...products.filter(p => active === 'all' || p.categoryId === active).map(p => productCard(p, ctx)));
       update();
       return h('div', {}, h('div.sp-panel-tools', {}, enableDragScroll(h('div.sp-chips', { role: 'group', 'aria-label': 'دسته محصول' }, chips), { snap: false })), grid);
     },
@@ -106,7 +106,7 @@ export function merchantDetailView(ctx, merchant) {
       merchantCoupons.length > 0 && h('section.sp-view-section', {}, h('h3', {}, 'کد تخفیف'),
         enableDragScroll(h('div.sp-rail.sp-coupon-rail', {}, merchantCoupons.map(c => h('div.sp-coupon-slide', {}, couponCard(c, ctx)))))),
       merchantProducts.length > 0 && h('section.sp-view-section', {}, h('h3', {}, 'محصولات'),
-        enableDragScroll(h('div.sp-rail', {}, merchantProducts.map(p => h('div.sp-offer-slide', {}, productCard(p)))))),
+        enableDragScroll(h('div.sp-rail', {}, merchantProducts.map(p => h('div.sp-offer-slide', {}, productCard(p, ctx)))))),
       hasBranches && h('section.sp-view-section', {}, h('h3', {}, `شعبه‌ها (${formatNumber(merchant.branches.length)})`),
         merchant.branches.map(branch => h('article.sp-branch', {},
           h('div.sp-branch-top', {}, h('h4', {}, branch.name),
@@ -116,5 +116,26 @@ export function merchantDetailView(ctx, merchant) {
                 html: `${icon('pin')}<span>مسیریابی</span>` }))),
           h('p', {}, [branch.city, branch.address].filter(Boolean).join('، ')),
           branch.hours && h('p', {}, branch.hours))))),
+  };
+}
+
+export function productDetailView(ctx, product) {
+  const { merchant } = product;
+  const percent = discountPercent(product.price, product.original);
+  return {
+    title: product.title,
+    render: () => h('div', {},
+      h('div.sp-product-media', {},
+        img(product.image, { alt: product.title, width: 640, height: 640, eager: true, fallback: product.title }),
+        percent > 0 && h('span.sp-offer-badge', {}, `${formatNumber(percent)}٪`)),
+      h('div.sp-detail-summary.sp-product-summary', {},
+        merchant && h('button.sp-product-merchant', { type: 'button', onclick: () => ctx.openMerchant(merchant), 'aria-label': `مشاهده ${merchant.name}` },
+          img(merchant.logo, { alt: '', width: 32, height: 32, fallback: false }), h('span', {}, merchant.name), h('span.sp-store-arrow', { html: icon('chevron') })),
+        h('h3.sp-product-title', {}, product.title),
+        h('div.sp-product-prices', {},
+          product.original && h('del.sp-offer-original', { 'aria-label': `قیمت قبل ${formatToman(product.original)} تومان` }, formatToman(product.original)),
+          h('div.sp-offer-final', {}, formatToman(product.price), h('small', {}, 'تومان'))),
+        product.url && h('a.sp-button.sp-button--primary', { href: outboundURL(product.url), rel: 'noopener' },
+          merchant ? `خرید از ${merchant.name}` : 'خرید محصول'))),
   };
 }
