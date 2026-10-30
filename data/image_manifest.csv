@@ -1,30 +1,4 @@
 ﻿asset_path,width_px,height_px,format,asset_type,sample_label,replaceable,notes
-assets/images/hero/automotive-hero.webp,1277,1277,webp,hero background,هیرو خودرو,yes,1277x1277 as cashback hero source; NO text baked in
-assets/images/hero/hero-category-01.webp,256,256,webp,hero category art,لوازم تزئینی و تیونینگ,yes,"superseded by assets/images/categories/ (new versions); not referenced"
-assets/images/hero/hero-category-02.webp,256,256,webp,hero category art,لوازم نظافت و نگه‌داری,yes,"superseded by assets/images/categories/ (new versions); not referenced"
-assets/images/hero/hero-category-03.webp,256,256,webp,hero category art,قطعات و لوازم مصرفی,yes,"superseded by assets/images/categories/ (new versions); not referenced"
-assets/images/hero/hero-category-04.webp,256,256,webp,hero category art,انواع ابزارالات,yes,"superseded by assets/images/categories/ (new versions); not referenced"
-assets/images/hero/hero-category-05.webp,256,256,webp,hero category art,انواع لاستیک,yes,"superseded by assets/images/categories/ (new versions); not referenced"
-assets/images/subcategories/subcategory-01.webp,256,256,webp,subcategory icon,دسته فرعی 1,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-02.webp,256,256,webp,subcategory icon,دسته فرعی 2,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-03.webp,256,256,webp,subcategory icon,دسته فرعی 3,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-04.webp,256,256,webp,subcategory icon,دسته فرعی 4,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-05.webp,256,256,webp,subcategory icon,دسته فرعی 5,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-06.webp,256,256,webp,subcategory icon,دسته فرعی 6,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-07.webp,256,256,webp,subcategory icon,دسته فرعی 7,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-08.webp,256,256,webp,subcategory icon,دسته فرعی 8,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-09.webp,256,256,webp,subcategory icon,دسته فرعی 9,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-10.webp,256,256,webp,subcategory icon,دسته فرعی 10,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-11.webp,256,256,webp,subcategory icon,دسته فرعی 11,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-12.webp,256,256,webp,subcategory icon,دسته فرعی 12,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-13.webp,256,256,webp,subcategory icon,دسته فرعی 13,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-14.webp,256,256,webp,subcategory icon,دسته فرعی 14,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-15.webp,256,256,webp,subcategory icon,دسته فرعی 15,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-16.webp,256,256,webp,subcategory icon,دسته فرعی 16,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-17.webp,256,256,webp,subcategory icon,دسته فرعی 17,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-18.webp,256,256,webp,subcategory icon,دسته فرعی 18,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-19.webp,256,256,webp,subcategory icon,دسته فرعی 19,yes,256x256; assigned to one of two rows
-assets/images/subcategories/subcategory-20.webp,256,256,webp,subcategory icon,دسته فرعی 20,yes,256x256; assigned to one of two rows
 assets/images/products/car-product-01.webp,640,640,webp,car product,محصول خودرو 1,yes,"640x640 transparent; from hero/hero-category-0N-new.png of the product category (sample, one image per category)"
 assets/images/products/car-product-02.webp,640,640,webp,car product,محصول خودرو 2,yes,"640x640 transparent; from hero/hero-category-0N-new.png of the product category (sample, one image per category)"
 assets/images/products/car-product-03.webp,640,640,webp,car product,محصول خودرو 3,yes,"640x640 transparent; from hero/hero-category-0N-new.png of the product category (sample, one image per category)"
@@ -70,12 +44,6 @@ assets/images/stores/car-store-09.webp,480,300,webp,store cover,کاور است�
 assets/images/logos/car-merchant-10.svg,128,128,svg,merchant logo,لوگوی مرچنت خودرو 10,yes,"128x128 vector, fictitious brand"
 assets/images/merchants/car-merchant-10.webp,390,640,webp,merchant cover,مرچنت خودرو 10,yes,"390x640; Wikimedia Commons photo, see assets/images/merchants/CREDITS.md"
 assets/images/stores/car-store-10.webp,480,300,webp,store cover,کاور استور 10,yes,"480x300; Wikimedia Commons photo, see assets/images/stores/CREDITS.md"
-assets/images/coupons/car-coupon-01.webp,1080,400,webp,coupon banner,کوپن خودرو 1,yes,1080x400; coupon code from data
-assets/images/coupons/car-coupon-02.webp,1080,400,webp,coupon banner,کوپن خودرو 2,yes,1080x400; coupon code from data
-assets/images/coupons/car-coupon-03.webp,1080,400,webp,coupon banner,کوپن خودرو 3,yes,1080x400; coupon code from data
-assets/images/coupons/car-coupon-04.webp,1080,400,webp,coupon banner,کوپن خودرو 4,yes,1080x400; coupon code from data
-assets/images/coupons/car-coupon-05.webp,1080,400,webp,coupon banner,کوپن خودرو 5,yes,1080x400; coupon code from data
-assets/images/coupons/car-coupon-06.webp,1080,400,webp,coupon banner,کوپن خودرو 6,yes,1080x400; coupon code from data
 assets/images/feature-tiles/car-tile-01.webp,800,800,webp,feature tile,تایل خودرو 1,yes,"800x800; from car-tile-01-new.jpeg, cropped by CSS per tile slot"
 assets/images/feature-tiles/car-tile-02.webp,800,800,webp,feature tile,تایل خودرو 2,yes,"800x800; from car-tile-02-new.jpeg, cropped by CSS per tile slot"
 assets/images/feature-tiles/car-tile-03.webp,800,800,webp,feature tile,تایل خودرو 3,yes,"800x800; from car-tile-03-new.jpeg, cropped by CSS per tile slot"

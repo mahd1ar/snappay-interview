@@ -8,7 +8,7 @@
   "mobile_first": true,
   "spa_in_page_panels": true,
   "sample_content": true,
-  "hero_background": "./assets/images/hero/automotive-hero.webp",
+  "hero_background": "./assets/images/hero/automotive-hero-new.webp",
   "sections": [
     {
       "id": "hero",
